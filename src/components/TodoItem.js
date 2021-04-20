@@ -22,7 +22,7 @@ const TodoItem = ({ id, title, completed }) => {
 				<span>
 					<input type='checkbox'
 						
-						 onChange={()=>handleCompleted}
+						 onChange={handleCompleted}
 				      ></input>
 					{title}
 				</span>
