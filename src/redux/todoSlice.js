@@ -14,10 +14,15 @@ const todoSlice = createSlice({
                         completed: false
                   }
                   state.push(newTodo)
-            }
-      }
+            },
+            completedItem: (state, action) => {
+             const index = state.findIndex((todo)=> todo.id === action.payload.id); //find the index
+             state[index].completed = action.payload.completed
+            },
+            
+      },
 })
 
-export const {addTodo} = todoSlice.actions
+export const {addTodo, completedItem} = todoSlice.actions
 
 export default todoSlice.reducer
