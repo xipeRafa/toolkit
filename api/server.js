@@ -16,7 +16,7 @@ let todos = [
 	{
 		id: nanoid(),
 		title: 'todo 1',
-		completed: true,
+		completed: false,
 	},
 	{
 		id: nanoid(),
@@ -71,3 +71,5 @@ app.delete('/todos/:id', (req, res) => {
 const PORT = 7000;
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`.green.bold));
+
+console.log(todos);
