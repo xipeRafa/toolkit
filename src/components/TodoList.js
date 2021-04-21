@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux' // To get values from the store in a com
 
 
 const TodoList = () => {
-	const todos = useSelector((state) => state.todos)
+	const todos = useSelector((state) => state.todos)//all state
 
 
 	return (
