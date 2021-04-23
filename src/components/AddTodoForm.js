@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import{useDispatch} from 'react-redux'
-import {addTodo} from '../redux/todoSlice' //action
+//import {addTodo} from '../redux/todoSlice' //action
 //To call the action, you "dispatch" it to the store Use the "useDispatch" hook to get access to the "dispatch" function
+import { addTodoAsync } from '../redux/todoSlice';
 
 const AddTodoForm = () => {
 	const [value, setValue] = useState('');
@@ -12,9 +13,12 @@ const AddTodoForm = () => {
 		event.preventDefault();
 		console.log('user entered: ' + value);
 		
-		dispatch(addTodo({
+		/* dispatch(addTodo({
 			title:value,
-	    }))
+	    })) */
+
+	    if (value) {dispatch(addTodoAsync({title: value,}));}
+	    setValue('')
 	};
 
 	return (
