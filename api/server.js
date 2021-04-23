@@ -16,7 +16,7 @@ let todos = [
 	{
 		id: nanoid(),
 		title: 'todo 1',
-		completed: false,
+		completed: true,
 	},
 	{
 		id: nanoid(),

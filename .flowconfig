@@ -1,0 +1,16 @@
+[ignore]
+.*/node_modules/.*
+.*/api/.*
+.*/App\.js
+.*/index\.css
+.*index\.js
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
