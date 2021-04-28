@@ -12,9 +12,12 @@ test('<AddTodoForm/> Cargar el formulario y revisar que todo sea correcto', () =
     <Provider store={store}>
       <AddTodoForm />
     </Provider>
-     );
+     )
+
  
-   /*  expect(screen.getByText("Hola jest!!")).toBeInTheDocument();
+   /* // const wrapper = render(<AddTodoForm />);
+      // wrapper.debug();  
+    expect(screen.getByText("Hola jest!!")).toBeInTheDocument();
     console.log(screen.getByTestId('titulo').tagName); 
     expect(screen.getByTestId('titulo').tagName).toBe('H2')
     expect(screen.getByTestId('titulo').textContent).toBe("Hola jest!!") */
