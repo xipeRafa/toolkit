@@ -7,7 +7,6 @@ import userEvent from "@testing-library/user-event";
 
 import AddTodoForm from './AddTodoForm';
 
-
 test('<AddTodoForm/> Cargar el formulario y revisar que todo sea correcto', () => {
   const { getByText } = render( 
     <Provider store={store}>
@@ -48,4 +47,25 @@ test("<Formulario/> Validación de formulario", () => {
   expect(alerta.tagName).toBe("P");
   expect(alerta.tagName).not.toBe("BUTTON");
 }); 
+
+
+
+test("<Formulario/> llenar list", () => {
+  const { getByText } = render( 
+    <Provider store={store}>
+      <AddTodoForm />
+    </Provider>
+     ); 
+
+  userEvent.type(screen.getByTestId("value-input"), "Test successfull")
+
+  //   Click en el boton de submit
+  const btnSubmit = screen.getByTestId("btn-submit");
+  userEvent.click(btnSubmit);
+
+  //   Revisar por la alerta
+  const alerta = screen.queryByTestId("alerta");
+  expect(alerta).not.toBeInTheDocument();
+
+});
 

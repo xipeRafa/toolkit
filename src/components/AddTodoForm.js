@@ -10,6 +10,10 @@ const AddTodoForm = () => {
 
       const dispatch = useDispatch();
 
+	const handleSet = (event) =>{
+            setValue(event.target.value)
+	}
+
 	const onSubmit = (event) => {
 		event.preventDefault();
 		console.log('user entered: ' + value);
@@ -22,6 +26,8 @@ const AddTodoForm = () => {
               return;
 		}
              setError(false)
+
+		 console.log('test:',value);
 	};
 
 
@@ -36,10 +42,11 @@ const AddTodoForm = () => {
 		
 		<form onSubmit={onSubmit} >
 			<input
+			      data-testid="value-input"
 				type='text'
 				placeholder='Add todo...'
 				value={value}
-				onChange={(event) => setValue(event.target.value)}
+				onChange={handleSet}
 			></input>
 
 			<button type='submit' 
