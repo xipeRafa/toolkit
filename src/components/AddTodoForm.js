@@ -12,16 +12,15 @@ const AddTodoForm = () => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		console.log('user entered: ' + value);
-		
-		/* dispatch(addTodo({
-			title:value,
-	    })) */
 
 	    if (value) {dispatch(addTodoAsync({title: value,}));}
 	    setValue('')
 	};
 
 	return (
+		<div>
+		<h2 data-testid="titulo">Hola jest!!</h2>
+		
 		<form onSubmit={onSubmit} >
 			<input
 				type='text'
@@ -30,10 +29,13 @@ const AddTodoForm = () => {
 				onChange={(event) => setValue(event.target.value)}
 			></input>
 
-			<button type='submit' >
+			<button type='submit' 
+			        data-testid="btn-submit"
+		      >
 				Submit
 			</button>
 		</form>
+		</div>
 	);
 };
 
