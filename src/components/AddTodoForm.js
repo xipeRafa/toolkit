@@ -6,6 +6,7 @@ import { addTodoAsync } from '../redux/todoSlice';
 
 const AddTodoForm = () => {
 	const [value, setValue] = useState('');
+	const [error, setError] = useState(false);
 
       const dispatch = useDispatch();
 
@@ -15,10 +16,22 @@ const AddTodoForm = () => {
 
 	    if (value) {dispatch(addTodoAsync({title: value,}));}
 	    setValue('')
+
+	    if (value.trim() === "" ) {
+              setError(true);
+              return;
+		}
+             setError(false)
 	};
+
 
 	return (
 		<div>
+	  {error ? (<p data-testid="alerta" className="error-alert">
+                       Type Something Firstly
+                  </p>
+                 ) : null}
+
 		<h2 data-testid="titulo">Hola jest!!</h2>
 		
 		<form onSubmit={onSubmit} >

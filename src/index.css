@@ -15,3 +15,10 @@ div{
 button{
 	margin: 10px;
 }
+
+.error-alert{
+	background-color: darkred;
+	padding: 10px;
+	color: #fff;
+	font-weight: bold;
+}
