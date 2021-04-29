@@ -10,8 +10,7 @@ const App = () => {
 			<AddTodoForm />
 			<TodoList />
 			<CompleteItems />
-			
-		</div>
+	      </div>
 	);
 };
 
