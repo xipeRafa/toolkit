@@ -19,14 +19,17 @@ const TodoItem = ({ id, title, completed }) => {
 	}
 
 	return (
-			<div>
-				<span>
+			<div className='item'>
+				<div>
 					<input type='checkbox'
-						defaultChecked={completed}
 						 onChange={handleCompleted}
-				      ></input>
-					{title}
-				</span>
+				       />
+			      </div>
+					
+				<div>{title}</div>	
+					
+				
+				<div> ID:{id}</div>
 				<button
 					onClick={handleDeleted}    
 				>

@@ -22,3 +22,12 @@ button{
 	color: #fff;
 	font-weight: bold;
 }
+.item{
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	border:1px solid red;
+}
+.item>div{
+	margin-right: 10px;
+}

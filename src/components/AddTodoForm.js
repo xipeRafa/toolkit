@@ -16,9 +16,9 @@ const AddTodoForm = () => {
 
 	const onSubmit = (event) => {
 		event.preventDefault();
-		console.log('user entered: ' + value);
 
-	    if (value) {dispatch(addTodoAsync({title: value,}));}
+	    if (value) {dispatch(addTodoAsync({title: value}))}
+	    
 	    setValue('')
 
 	    if (value.trim() === "" ) {
@@ -27,34 +27,33 @@ const AddTodoForm = () => {
 		}
              setError(false)
 
-		 console.log('test:',value);
 	};
 
 
 	return (
 		<div>
-	  {error ? (<p data-testid="alerta" className="error-alert">
+	           {error ? 
+	             (<p data-testid="alerta" className="error-alert">
                        Type Something Firstly
-                  </p>
-                 ) : null}
+                    </p>
+                   ) : null}
 
-		<h2 data-testid="titulo">Hola jest!!</h2>
+		  <h2 data-testid="titulo">Hola jest!!</h2>
 		
-		<form onSubmit={onSubmit} >
+		  <form onSubmit={onSubmit} >
 			<input
 			      data-testid="value-input"
 				type='text'
 				placeholder='Add todo...'
 				value={value}
-				onChange={handleSet}
-			></input>
+				onChange={handleSet}>
+                  </input>
 
 			<button type='submit' 
-			        data-testid="btn-submit"
-		      >
+			        data-testid="btn-submit">
 				Submit
 			</button>
-		</form>
+		  </form>
 		</div>
 	);
 };

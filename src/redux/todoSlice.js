@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 
-export const getTodosAsync = createAsyncThunk(  //function that retuirn another function
+export const getTodosAsync = createAsyncThunk(  //function that return another function
 	'todos/getTodosAsync',
 	async () => {
 		const resp = await fetch('http://localhost:7000/todos');

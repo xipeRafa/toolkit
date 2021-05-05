@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const colors = require('colors');
 const cors = require('cors');
 const { json } = require('body-parser');
 const { nanoid } = require('nanoid');
