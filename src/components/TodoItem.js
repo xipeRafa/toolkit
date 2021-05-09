@@ -23,16 +23,16 @@ const TodoItem = ({ id, title, completed }) => {
 				<div>
 					<input type='checkbox'
 						 onChange={handleCompleted}
+						 defaultChecked={completed}
 				       />
 			      </div>
 					
 				<div>{title}</div>	
 					
 				
-				<div> ID:{id}</div>
 				<button
-					onClick={handleDeleted}    
-				>
+                         	onClick={handleDeleted}
+			      >
 					Delete
 				</button>
 			</div>

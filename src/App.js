@@ -4,12 +4,16 @@ import AddTodoForm from './components/AddTodoForm';
 import TodoList from './components/TodoList';
 import CompleteItems from './components/CompleteItems';
 
+
 const App = () => {
 	return (
 		<div> 
+			
+			<CompleteItems />
 			<AddTodoForm />
 			<TodoList />
-			<CompleteItems />
+			
+			
 	      </div>
 	);
 };
